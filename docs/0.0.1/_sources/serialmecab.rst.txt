@@ -1,0 +1,7 @@
+serialmecab package
+===================
+
+.. automodule:: serialmecab
+   :members:
+   :undoc-members:
+   :show-inheritance:
