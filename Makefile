@@ -35,7 +35,7 @@ doc: $(BASE_DIR)docs/.nojekyll $(VENV)bin/sphinx-build $(DOC_BUILD_DIR)conf.py $
 	sphinx-build -a $(DOC_BUILD_DIR) $(DOC_DIR)
 	rm -rf $(DOC_DIR).buildinfo $(DOC_DIR).doctrees $(DOC_BUILD_DIR)
 
-clean: clean_test clean_doc clean_publish ## Delete unnecessary files.
+clean: clean_test clean_doc clean_pub ## Delete unnecessary files.
 	rm -rf $(VENV)
 
 clean_pub: ## Delete unnecessary resources for publishment.
