@@ -5,3 +5,39 @@ serialmecab package
    :members:
    :undoc-members:
    :show-inheritance:
+
+Submodules
+----------
+
+serialmecab.text module
+-----------------------
+
+.. automodule:: serialmecab.text
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+serialmecab.token module
+------------------------
+
+.. automodule:: serialmecab.token
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+serialmecab.tokenizer module
+----------------------------
+
+.. automodule:: serialmecab.tokenizer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+serialmecab.types module
+------------------------
+
+.. automodule:: serialmecab.types
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
