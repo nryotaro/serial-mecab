@@ -32,7 +32,7 @@ class Tokens:
         Returns
         -------
         Tokens
-           tokens that satisfy `token_filter`.
+           tokens that meet `token_filter`.
 
         """
         return Tokens([token for token in self.tokens if token_filter(token)])

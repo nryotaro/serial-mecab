@@ -1,9 +1,6 @@
 """Provide classes relevant to text."""
 from dataclasses import dataclass
-from typing import Iterable
 import re
-import collections.abc as collections
-import abc
 
 
 @dataclass
