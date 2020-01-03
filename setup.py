@@ -4,8 +4,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='serial-mecab',
-    version="0.0.1",
-    description=('mecab-python3 Wrapper for serialization'),
+    version="0.0.2",
+    description=('mecab-python3 wrapper for serialization'),
     packages=find_packages(),
     install_requires=[
         'mecab-python3',
