@@ -1,9 +1,8 @@
 """Expose a class for tokenization."""
 from logging import getLogger
+from typing import List
 import os
 import MeCab
-from . import text as txt
-from . import token as token
 
 
 class MecabTokenizer:
@@ -15,12 +14,12 @@ class MecabTokenizer:
         """Take a client for MeCab."""
         self.tagger = tagger
 
-    def __call__(self, text: txt.Text) -> token.Tokens:
+    def __call__(self, text: str) -> List[str]:
         """Tokenize a text."""
-        segments = self.tagger.parse(text.text)
+        segments = self.tagger.parse(text)
         tokens = [segment.split('\t')[0]
                   for segment in segments.split(os.linesep)][:-2]
-        return token.Tokens([token.Token(raw_token) for raw_token in tokens])
+        return tokens
 
     def __getstate__(self):
         """Exclude :py:attr:`tagger` because it is not picklable."""
@@ -32,6 +31,7 @@ class MecabTokenizer:
         Set :py:attr:`tagger` to a new :py:class:`MeCab.Tagger` object.
         """
         self.tagger = self._create_tagger()
+        self.logger = getLogger(__name__)
 
     @classmethod
     def create(cls):

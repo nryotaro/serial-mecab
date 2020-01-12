@@ -5,8 +5,6 @@ import tempfile
 import os.path
 import MeCab
 import joblib
-import serialmecab.token as tkn
-import serialmecab.text as txt
 import serialmecab.tokenizer as t
 
 
@@ -34,10 +32,10 @@ class TestMecabTokenizer(TestCase):
     def test_callable(self):
         """Tokenize a text when it is called as a function."""
         tokens = self.tokenizer(
-            txt.Text('資本主義における覚悟は、破産と失業である'))
-        self.assertIsInstance(tokens, tkn.Tokens)
-        for token in tokens.tokens:
-            self.assertIsInstance(token, tkn.Token)
+            '資本主義における覚悟は、破産と失業である')
+        self.assertIsInstance(tokens, list)
+        for token in tokens:
+            self.assertIsInstance(token, str)
 
     def test_persistent(self):
         """MecabTokenizer is picklable."""
