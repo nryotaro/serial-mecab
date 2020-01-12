@@ -1,0 +1,27 @@
+serialmecab package
+===================
+
+.. automodule:: serialmecab
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+serialmecab.tokenizer module
+----------------------------
+
+.. automodule:: serialmecab.tokenizer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+serialmecab.types module
+------------------------
+
+.. automodule:: serialmecab.types
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

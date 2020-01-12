@@ -1,0 +1,7 @@
+serialmecab
+===========
+
+.. toctree::
+   :maxdepth: 4
+
+   serialmecab
