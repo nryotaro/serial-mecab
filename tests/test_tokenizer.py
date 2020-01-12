@@ -77,3 +77,21 @@ class TestMecabTokenizer(TestCase):
         self.tokenizer._create_tagger()
 
         self.assertEqual(tagger.call_args_list, [call()])
+
+    @patch('MeCab.Tagger')
+    def test_create_tagger_userdic(self, tagger):
+        """userdic can be passed."""
+        pseudo_userdic = 'user.dic'
+
+        self.tokenizer._create_tagger(userdic=pseudo_userdic)
+        self.assertEqual(tagger.call_args_list, [call(f'-u {pseudo_userdic}')])
+
+    @patch('MeCab.Tagger')
+    def test_create_tagger_dicdir_userdic(self, tagger):
+        """Both dicdir and userdic can be passed."""
+        pseudo_userdic = 'user.dic'
+        pseudo_dicdir = 'dicdir'
+        self.tokenizer._create_tagger(
+                dicdir=pseudo_dicdir, userdic=pseudo_userdic)
+        self.assertEqual(tagger.call_args_list,
+                [call(f'-d {pseudo_dicdir} -u {pseudo_userdic}')])

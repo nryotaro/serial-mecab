@@ -40,7 +40,19 @@ class MecabTokenizer:
 
     @classmethod
     def _create_tagger(
-            cls, dicdir=os.getenv('MECAB_DICDIR', None)) -> MeCab.Tagger:
+            cls, 
+            dicdir=os.getenv('MECAB_DICDIR', None),
+            userdic=os.getenv('MECAB_USERDIC', None)
+            ) -> MeCab.Tagger:
         """Create a :py:class:`MeCab.Tagger` object."""
         cls.logger.info('mecab system dictionary is %s.', dicdir)
-        return MeCab.Tagger(f'-d {dicdir}') if dicdir else MeCab.Tagger()
+        cls.logger.info('mecab user dictionary is %s.', userdic)
+
+        args = ''
+        if dicdir:
+            args = f'-d {dicdir}'
+        if userdic:
+            args = f'{args} -u {userdic}' if args else f'-u {userdic}'
+        if len(args) == 0:
+            return MeCab.Tagger()
+        return MeCab.Tagger(args)
